@@ -1,5 +1,7 @@
 # Lighthouse Labs | Introduction to SQL
 
+[GitHub Repository Branch](https://github.com/WarrenUhrich/lighthouse-labs-intro-to-sql/tree/2022.05.30-web-ft-east-02may2022) | [Vimeo Video Recording](https://vimeo.com/715310311/9d9326e189)
+
 * [X] Databases
 * [X] PostgreSQL
 * [X] Basic SQL Queries (Focus on `SELECT`)
