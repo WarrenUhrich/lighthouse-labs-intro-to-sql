@@ -4,22 +4,62 @@
 * [X] PostgreSQL
 * [ ] Basic SQL Queries (Focus on `SELECT`)
 
-## Databases are the Missing Puzzle Piece
 
-The last piece of the full-stack is the database. This offers us a persistant storage system.
+# Lighthouse Labs | Introduction to SQL
 
-* PostgreSQL
-* MySQL
-* Oracle
-* MongoDB
-* MariaDB
-* Microsoft SQL Server
+* [ ] Databases
+* [ ] PostgreSQL
 
-### Relational Databases
+## Putting one more Piece in the Web Development Puzzle
 
-* Database ---> Table(s) / Attributes ---> Records
+We've had the opportunity, at this point, to explore a variety of technologies on the web! The full-stack is often described as being composed of the [front-end](https://developer.mozilla.org/en-US/docs/Learn/Front-end_web_developer) ([HTML](https://developer.mozilla.org/en-US/docs/Web/HTML), [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS), [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)) and the [back-end (server-side application / scripts](https://developer.mozilla.org/en-US/docs/Learn/Server-side/First_steps/Introduction), a database.) Just about every one of these pieces has been touched on now, except for... the [database](https://developer.mozilla.org/en-US/docs/Glossary/Database)! So that's what we're going to begin exploring today.
 
-Database: website
+![Mozilla's Web Application Breakdown Diagram](https://developer.mozilla.org/en-US/docs/Learn/Server-side/First_steps/Introduction/web_application_with_html_and_steps.png)
+
+*Image courtesy of the [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Learn/Server-side/First_steps/Introduction).*
+
+## Databases
+
+While building applications in previous assignments and practice, there were a number of times that we found it difficult to properly store information in a consistent and persistant way... this is because we were usually lacking a formal database. This is the problem we try to solve!
+
+Typically databases are an effective way to reliably store information that represent real-world entities. This is most often accomplished by dedicated software that specializes in data storage and organization.
+
+There are a variety of popular and powerful [database management systems (DBMS)](https://en.wikipedia.org/wiki/Database#Database_management_system) available, you may have already heard of some:
+
+* [PostgreSQL](https://www.postgresql.org/)
+* [Microsoft SQL Server](https://www.microsoft.com/en-us/sql-server/sql-server-2019)
+* [MariaDB](https://mariadb.org/)
+* [MySQL](https://www.mysql.com/)
+
+The above are just the tip of the database management system iceberg, so you'll likely hear about more as you continue your software development journey! As we can't afford to cover them all within the scope of a bootcamp, we'll be spending some time with one in particular: [PostgreSQL](https://www.postgresqltutorial.com/).
+
+Think back to node.js / Express... we were only able to ask for HTML responses with our web browser if the script / server was actually running. We'll see the same when using our database software—if the service is not running properly and in a way accessible to apps, then it won't be of much use.
+
+## The Relational Model
+
+PostgreSQL, and many other popular database management systems, choose to follow a [relational model](https://en.wikipedia.org/wiki/Relational_model) for data storage. This usually means data is stored and interacted with as tuples within relations... basically, lists of information kept in related storage containers. We'll explore better language for this in just a moment!
+
+Most RDBMSs (relational database management systems) have incorporated [SQL (structured query language)](https://en.wikipedia.org/wiki/SQL) to more easily and consistently set-up, query from, add to, and otherwise manipulate their database contents. It is our goal today to get familiar both with the idea of the relational database, and start interacting with it via this common language.
+
+## Important Terms
+
+### Database: Collection of related tables.
+
+Databases(, collections,) are composed of one or more tables. They most often feature a descriptive name, and should only contain tables that are relevant to one another for use in a particular project.
+
+### Table: Collection of related records.
+
+Tables(, relations,) directly represent a series of stored entities. Tables feature fields / columns, which define what information can be stored in each row, and what format(s) this data should follow.
+
+We define these fields(, attributes, properties, or columns,) that will be consistent among all entries in this table.
+
+### Record: Collection of related fields.
+
+An individual record(, row, or entity) inside of a table is composed of the actual information (values) for that specific entry in the table.
+
+## Visualizing this Concept
+
+Here is a sample table, titled "Programming Languages":
 
 ### programming_languages
 
@@ -31,16 +71,51 @@ Database: website
 | 4         | Ruby        | 1995     | General purpose and programmer-friendly scripting language.
 | 5         | SQL         | 1974     | Language for interacting with database systems.
 
-## Schema
+### Breaking Down its Pieces
 
----> Table exists inside of the `website` database.
----> Table is called `programming_languages`
-* INT    | `id`
-* STRING | `name`
-* INT    | `year`
-* STRING | `description`
+This exposes the terms and what it is that makes up a table. Note that we are representing a specific entity and reflecting that in the name of the table: `programming_languages`
 
-| 6       | Julia        | 2012      | High-performance scripting language.
+If we're careful with naming, this helps us as developers make it immediately clear what it is that is stored inside. Consider the following database with two tables inside:
+
+```
+my_db
+├table_a
+└table_b
+```
+
+Can you easily guess what sort of information will be contained in this database or its tables? Probably not... now, what if you saw another named like so:
+
+```
+programmer_site_db
+├users
+└programming_languages
+```
+
+Naming can make a big difference, especially in a team environment. It will save you a lot of explaining and lead to a far more intuitive experience.
+
+Okay, so, back to the `programming_languages` table. We know that we want to store some sort of data surrounding programming, but we'll want to be clear about what data is expected on a per-programming-language-basis. This is where **fields** come in.
+
+Our fields, or columns, restrict and explain each piece of info every programming language in this table should have. In this case, something like:
+
+```
+programming_languages fields:
+  INTEGER | id
+  STRING  | name
+  INTEGER | year
+  STRING  | description
+```
+
+Every programming language in our table should have an `id`, `name`, `year`, and `description`. Now that we have a named table, and have defined what it is that should be stored inside it, we need to talk records, or, rows.
+
+If we'd like to add a new **record** to the table, we have to make sure it follows our previous rules. Let's say we want to add some basic details about the [Julia](https://julialang.org/) programming language. Following our field expectations, we'd format the info something like:
+
+| **id**    | **name**    | **year** | **description**
+|-----------|-------------|----------|----------------
+| 6         | Julia       | 2012     | General purpose and high-performance scripting language.
+
+This would be a representation of a single record, or row, in the `programming_languages` table. 
+
+Let's see what it looks like along with the other records:
 
 ### programming_languages
 
@@ -51,15 +126,38 @@ Database: website
 | 3         | JavaScript  | 1995     | Web page scripting language.
 | 4         | Ruby        | 1995     | General purpose and programmer-friendly scripting language.
 | 5         | SQL         | 1974     | Language for interacting with database systems.
-| 6         | Julia       | 2012     | High-performance scripting language.
-| 7         | PHP         | 1994     | Web scripting language.
+| 6         | Julia       | 2012     | General purpose and high-performance scripting language.
 
-## PostgreSQL
+## Resources
 
-### SQL - Structured Query Language
+* [PostgreSQL Tutorial](https://www.postgresqltutorial.com/postgresql-tutorial/)
+    * [`SELECT`](https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-select/) and [Aliases](https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-column-alias/)
+    * [`ORDER BY`](https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-order-by/)
+    * [`DISTINCT`](https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-select-distinct/)
+    * [`WHERE`](https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-where/)
+    * [`LIMIT`](https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-limit/)
+    * [`INNER JOIN`](https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-inner-join/)
+    * [`LEFT JOIN`](https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-left-join/)
+    * [`RIGHT JOIN`](https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-right-join/)
+    * [`INSERT`](https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-insert/) and [Inserting Multiple Rows](https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-insert-multiple-rows/)
+    * [`UPDATE`](https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-update/)
+    * [`DELETE`](https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-delete/)
+    * [`PRIMARY KEY`](https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-primary-key/)
+    * [`FOREIGN KEY`](https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-foreign-key/)
 
-Human readable.
-
-`postgres://`
-
-`Primary Key` -> field / attribute / column -> Easy for PCs to sort / order.
+* [W3Schools: SQL](https://www.w3schools.com/sql/default.asp)
+    * [Comments](https://www.w3schools.com/sql/sql_comments.asp)
+    * [`SELECT`](https://www.w3schools.com/sql/sql_select.asp)
+    * [`DISTINCT`](https://www.w3schools.com/sql/sql_distinct.asp)
+    * [`WHERE`](https://www.w3schools.com/sql/sql_where.asp)
+    * [`AND`, `OR`, `NOT`](https://www.w3schools.com/sql/sql_and_or.asp)
+    * [`ORDER BY`](https://www.w3schools.com/sql/sql_orderby.asp)
+    * [`INSERT INTO`](https://www.w3schools.com/sql/sql_insert.asp)
+    * [`UPDATE`](https://www.w3schools.com/sql/sql_update.asp)
+    * [`DELETE`](https://www.w3schools.com/sql/sql_delete.asp)
+    * [`COUNT()`, `AVG()`, `SUM()`](https://www.w3schools.com/sql/sql_count_avg_sum.asp)
+    * [`INNER JOIN`](https://www.w3schools.com/sql/sql_join_inner.asp)
+    * [`LEFT JOIN`](https://www.w3schools.com/sql/sql_join_left.asp)
+    * [`RIGHT JOIN`](https://www.w3schools.com/sql/sql_join_right.asp)
+    * [`FULL OUTER JOIN`](https://www.w3schools.com/sql/sql_join_full.asp)
+    * [`GROUP BY`](https://www.w3schools.com/sql/sql_groupby.asp)
