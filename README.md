@@ -2,13 +2,7 @@
 
 * [X] Databases
 * [X] PostgreSQL
-* [ ] Basic SQL Queries (Focus on `SELECT`)
-
-
-# Lighthouse Labs | Introduction to SQL
-
-* [ ] Databases
-* [ ] PostgreSQL
+* [X] Basic SQL Queries (Focus on `SELECT`)
 
 ## Putting one more Piece in the Web Development Puzzle
 
