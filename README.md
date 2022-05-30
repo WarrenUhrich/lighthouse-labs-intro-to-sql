@@ -122,7 +122,38 @@ Let's see what it looks like along with the other records:
 | 5         | SQL         | 1974     | Language for interacting with database systems.
 | 6         | Julia       | 2012     | General purpose and high-performance scripting language.
 
+## SQL Syntax
+
+Let's break down some basics in SQL's syntax. For example, consider the following `SELECT` statement:
+
+```SQL
+-- A basic SQL query:
+SELECT * FROM users;
+```
+
+The `--` indicates an SQL comment. Comments in SQL are single-lined, and are simply preceded by these two characters.
+
+One might assume that `SELECT` and `FROM`, being keywords, are required to be all-capitalized. This is, however, not the case! Keywords in SQL are generally not capital-sensitive. This means we could type in `sElEcT`, `select`, `SELect`, `selECT`, `SELECT`, etc. and each would be considered valid. Why bother thinking about capitalization, then, and why do so many examples feature keywords in all-capital letters!?
+
+This brings us into one of the strengths of SQL: it is intended to be human readable. Even reading our simple sample statement: `SELECT * FROM users;` you may be able to guess what it is that this line is meant to accomplish. To clarify, that line tells the database to read to us all (`*`) values stored in the `users` table. Most SQL is meant to read similar to English, and behave intuitively based on how you write instructions.
+
+To follow suit in this human-readable fashion, we aim to ensure it is clear to other developers what is a construct of the SQL language, and what is related to our own database tables and fields. To help make this distinction, most use all-capital letters for SQL keywords. Because it is a common convention for our own table and field names to be `snake_case`, it makes both cases (SQL keywords and our own names) stand out and very clearly even at a glance.
+
+Note as well that each full SQL statement ends in a semi-colon. This is important to remember, as many requests will result in an error (or await more instructions) without this inclusion!
+
 ## Resources
+
+* [Official PostgreSQL Website](https://www.postgresql.org/)
+    * [Documentation](https://www.postgresql.org/docs/)
+
+* [SQLBolt: Introduction to SQL](https://sqlbolt.com/)
+    * [`SELECT`](https://sqlbolt.com/lesson/select_queries_review)
+    * [`JOIN`s](https://sqlbolt.com/lesson/select_queries_with_joins)
+    * [Order of execution of a Query](https://sqlbolt.com/lesson/select_queries_order_of_execution)
+    * [`CREATE TABLE`](https://sqlbolt.com/lesson/creating_tables)
+    * [`INSERT`](https://sqlbolt.com/lesson/inserting_rows)
+    * [`UPDATE`](https://sqlbolt.com/lesson/updating_rows)
+    * [`DELETE`](https://sqlbolt.com/lesson/deleting_rows)
 
 * [PostgreSQL Tutorial](https://www.postgresqltutorial.com/postgresql-tutorial/)
     * [`SELECT`](https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-select/) and [Aliases](https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-column-alias/)
