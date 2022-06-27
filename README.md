@@ -1,6 +1,6 @@
 # Lighthouse Labs | Introduction to SQL
 
-[GitHub Repository Branch](https://github.com/WarrenUhrich/lighthouse-labs-intro-to-sql/tree/2022.06.27-web-ft-east-30may2022) | [Vimeo Video Recording (Coming Soon!)](#coming-soon)
+[GitHub Repository Branch](https://github.com/WarrenUhrich/lighthouse-labs-intro-to-sql/tree/2022.06.27-web-ft-east-30may2022) | [Vimeo Video Recording](https://vimeo.com/724561571/53d314e7f4)
 
 * [X] Databases
 * [X] PostgreSQL
@@ -272,6 +272,8 @@ WHERE
     * [`DELETE`](https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-delete/)
     * [`PRIMARY KEY`](https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-primary-key/)
     * [`FOREIGN KEY`](https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-foreign-key/)
+    * [`GROUP BY`](https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-group-by/)
+    * [`HAVING`](https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-having/)
 
 * [W3Schools: SQL](https://www.w3schools.com/sql/default.asp)
     * [Comments](https://www.w3schools.com/sql/sql_comments.asp)
@@ -289,3 +291,4 @@ WHERE
     * [`RIGHT JOIN`](https://www.w3schools.com/sql/sql_join_right.asp)
     * [`FULL OUTER JOIN`](https://www.w3schools.com/sql/sql_join_full.asp)
     * [`GROUP BY`](https://www.w3schools.com/sql/sql_groupby.asp)
+    * [`HAVING`](https://www.w3schools.com/sql/sql_having.asp)
