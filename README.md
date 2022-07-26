@@ -55,6 +55,8 @@ A DBMS that follow the relational model.
 
 ## Putting one more Piece in the Web Development Puzzle
 
+![Full Stack Puzzle Diagram](https://github.com/WarrenUhrich/lighthouse-labs-intro-to-sql/blob/2022.07.26-web-flex-16may2022/full_stack_puzzle.png?raw=true)
+
 We've had the opportunity, at this point, to explore a variety of technologies on the web! The full-stack is often described as being composed of the [front-end](https://developer.mozilla.org/en-US/docs/Learn/Front-end_web_developer) ([HTML](https://developer.mozilla.org/en-US/docs/Web/HTML), [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS), [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)) and the [back-end (server-side application / scripts](https://developer.mozilla.org/en-US/docs/Learn/Server-side/First_steps/Introduction), a database.) Just about every one of these pieces has been touched on now, except for... the [database](https://developer.mozilla.org/en-US/docs/Glossary/Database)! So that's what we're going to begin exploring today.
 
 ![Mozilla's Web Application Breakdown Diagram](https://developer.mozilla.org/en-US/docs/Learn/Server-side/First_steps/Introduction/web_application_with_html_and_steps.png)
@@ -171,6 +173,10 @@ Let's see what it looks like along with the other records:
 | 5         | SQL         | 1974     | Language for interacting with database systems.
 | 6         | Julia       | 2012     | General purpose and high-performance scripting language.
 
+### Database Example
+
+![Database Example Image](https://github.com/WarrenUhrich/lighthouse-labs-intro-to-sql/blob/2022.07.26-web-flex-16may2022/database_example.png?raw=true)
+
 ## SQL Syntax
 
 Let's break down some basics in SQL's syntax. For example, consider the following `SELECT` statement:
@@ -189,6 +195,10 @@ This brings us into one of the strengths of SQL: it is intended to be human read
 To follow suit in this human-readable fashion, we aim to ensure it is clear to other developers what is a construct of the SQL language, and what is related to our own database tables and fields. To help make this distinction, most use all-capital letters for SQL keywords. Because it is a common convention for our own table and field names to be `snake_case`, it makes both cases (SQL keywords and our own names) stand out and very clearly even at a glance.
 
 Note as well that each full SQL statement ends in a semi-colon. This is important to remember, as many requests will result in an error (or await more instructions) without this inclusion!
+
+## Pagination Example
+
+![What is Pagination?](https://github.com/WarrenUhrich/lighthouse-labs-intro-to-sql/blob/2022.07.26-web-flex-16may2022/pagination_diagram.png?raw=true)
 
 ## Resources
 
