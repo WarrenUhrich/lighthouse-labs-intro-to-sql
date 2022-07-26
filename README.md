@@ -1,6 +1,6 @@
 # Lighthouse Labs | Intro to SQL
 
-[GitHub Repository Branch](https://github.com/WarrenUhrich/lighthouse-labs-intro-to-sql/tree/2022.07.26-web-flex-16may2022) | [Vimeo Video Recording (Coming Soon!)](https://vimeo.com/733744381/0285ed40be)
+[GitHub Repository Branch](https://github.com/WarrenUhrich/lighthouse-labs-intro-to-sql/tree/2022.07.26-web-flex-16may2022) | [Vimeo Video Recording](https://vimeo.com/733744381/0285ed40be)
 
 * [X] Databases
 * [X] PostgreSQL
