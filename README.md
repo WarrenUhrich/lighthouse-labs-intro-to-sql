@@ -1,2 +1,5 @@
-# lighthouse-labs-intro-to-sql
-Lighthouse Labs "intro to SQL" lecture.
+# Lighthouse Labs | Intro to SQL
+
+* [ ] Databases
+* [ ] PostgreSQL
+* [ ] Basic SQL Queries
