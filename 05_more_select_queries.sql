@@ -87,4 +87,4 @@ ON students.id = pets.student_id
 GROUP BY students.id
 HAVING COUNT(pets.id) >= 2;
 
--- JOIN, GROUP BY, HAVING
+-- Research: JOIN, GROUP BY, HAVING
