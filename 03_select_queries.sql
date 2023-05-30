@@ -8,8 +8,3 @@ SELECT * FROM pets;
 
 SELECT id, name FROM students;
 SELECT id, name, type, age, colour FROM pets;
-
--- A list of only Warren's pets?
-SELECT *
-FROM pets
-WHERE student_id = 4;
