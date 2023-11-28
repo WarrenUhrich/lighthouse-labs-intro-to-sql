@@ -64,3 +64,8 @@ INSERT INTO pets(name, type, student_id)
 VALUES('PEFA', 'Peregrine Falcon', 6);
 INSERT INTO pets(name, type, student_id)
 VALUES('CORA', 'Common Raven', 6);
+
+INSERT INTO students(name) -- Student #7
+VALUES('Mako');
+INSERT INTO pets(name, type, student_id)
+VALUES('Bubby', 'Cat', 7);
