@@ -4,6 +4,8 @@
 * [ ] PostgreSQL
 * [ ] Basic SQL Queries
 
+https://www.postgresqltutorial.com/ :)
+
 ## Our Existing Approach to Storing Data in our Back-end
 
 * JSON/text File in the project!
@@ -60,3 +62,23 @@ A few examples of DBMSs include:
 * SQLite3
 
 Each of the above is a program that can help us run a database! Each reserves its right to have its own commands, features, and way of doing things though. They all have the relational model in common!
+
+## PostgreSQL Best-Practice
+
+Table names should be `snake_case`.
+Table names should be plural.
+
+Column names should be `snake_case`.
+
+## Basic SQL Syntax
+
+```SQL
+
+-- A comment!
+-- Each comment is one-line 👍
+
+SELECT * FROM menu_items;
+
+sElEcT * fRoM users;
+
+```

@@ -69,3 +69,9 @@ INSERT INTO students(name) -- Student #7
 VALUES('Mako');
 INSERT INTO pets(name, type, student_id)
 VALUES('Bubby', 'Cat', 7);
+
+INSERT INTO students(name) VALUES('Dhaarani'); --student_id #8
+INSERT INTO pets(name, type, student_id) VALUES('Dachshund', 'Dog', 8);
+INSERT INTO pets(name, type, student_id) VALUES('Siberian Husky', 'Dog', 8);
+
+INSERT INTO students(name) VALUES('Neeha'); -- Student # 9
